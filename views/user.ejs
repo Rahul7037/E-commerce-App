@@ -1,0 +1,37 @@
+<script>
+    function a(){
+            document.cookie = 'false'
+        }
+        a()
+    </script>
+<%- include('./header.ejs') %> 
+
+<div class="container mt-5">
+<h4>User Name :- <%= userAccount.username %> </h4>
+<form action="/user/<%=userAccount.id%>?_method=PUT" method="post">
+    <div class="form-group mt-3">
+    <label for="email">Email</label>
+    <input class="form-control mt-2" type="email" id="email" name="email" value="<%= userAccount.email ? userAccount.email : ''  %> ">
+    </div>
+    <div class="mt-4">
+    <label for="address">Address</label>
+    </div>
+    <div class="mt-2">
+    <textarea class="form-control " name="address" id="address" cols="30" rows="10"><%= userAccount.address ? userAccount.address : '' %> </textarea>
+    </div>
+    <button class="btn btn-info mt-3 border border-dark" type="submit">Save Changes</button>
+</form>
+<a class="btn btn-info mt-2 border border-dark" href="http://localhost:3000/myorder"><h5>My Order</h5></a>
+
+<form action="/sessionDistroy" method="post">
+    <button class="btn btn-info mt-3 border border-dark" type="submit" onclick="changeState()">Log out</button>
+</form>
+</div>
+
+<%- include('./footer.ejs') %> 
+<script>
+    
+    function changeState(){
+        document.cookie = 'true'
+    }
+</script>

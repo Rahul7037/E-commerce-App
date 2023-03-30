@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(242, 242, 242);
+  }
+ #img{
+    width: 200px;
+    height: 200px;
+ }
+ #text{
+    text-decoration: none
+ }
+ #div{
+    width: 200px;
+    height: 350px;
+ }
+ #carousel{
+   width: 250px;
+   height: 250px;
+ }
+ #text{
+   overflow: hidden;
+   text-align: center;
+ }

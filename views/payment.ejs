@@ -1,0 +1,27 @@
+<%- include('./header.ejs') %> 
+<div class="container mt-5">
+
+	<h3>List of items</h3>
+	<% var b = 0 %> 
+	<%   for(let e=0;e<details.x;e++){%>
+		<div class="mt-2">
+		<h5><%= details.item[b] %> </h5>
+		<h5><%= details.price[b] %> </h5>
+		<% b++ %> 
+		</div>
+		<% }%>
+	<h3>Totol Amount <%= details.amount%> </h3>
+
+
+		<form action="/chechout" method="post">
+			<% var d = 0 %> 
+			<%   for(let a=0;a<details.x;a++){%>
+				<input type="hidden" name="name" id="name" value="<%= details.item[d] %>">
+				<input type="hidden" name="price" id="price" value="<%= details.price[d] %>">
+				<% }%>
+			<input type="hidden" name="amount" id="amount" value="<%= details.amount%>">
+			<input type="hidden" name = "x" value="<%=details.x%> ">
+			<button class="btn btn-info mt-2 border border-dark" type="submit">procced to pay</button>
+		</form>
+	</div>
+<%- include('./footer.ejs') %> 

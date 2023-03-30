@@ -1,0 +1,16 @@
+<%- include('./header.ejs') %> 
+    <div class="container mt-5">
+        <div class="row">
+        <% for( list of category){ %> 
+            <div class="col">
+                <div id="div" class="card text-justify mb-4 mx-auto " style="width: 18rem;">
+                <img class="card-img-top mx-auto my-2 d-block" id="img" src="<%=list.name%> (1).jpeg" alt="hey" srcset="">
+                <a id="text" class=" text-dark" href="http://localhost:3000/productPage/<%=list.name%>"><h5 id="text" class="card-title px-4 "><%=list.name %> </h5></a>
+                </div>
+            </div>
+         <% } %> 
+        </div>
+    </div>
+</body>
+</html>
+<%- include('./footer.ejs') %>

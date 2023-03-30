@@ -1,0 +1,15 @@
+<%- include('./header.ejs') %> 
+<div class="container mt-5">
+    <%   for(let a of order){%>
+    <div class="mt-5">
+    <h5> order id :- <%= a.oderId %> </h5>
+    <% for(let b = 0;b<a.x;b++) {%> 
+
+        <h5>items:- <%= a.item.name[b] %> </h5>
+        <h5>items:- <%= a.item.price[b] %> </h5>
+        <% } %> 
+        <h5> Price :- <%= (a.amount)/100 %> </h5>
+    </div>
+    <% }%>
+</div>
+ <%- include('./footer.ejs') %> 

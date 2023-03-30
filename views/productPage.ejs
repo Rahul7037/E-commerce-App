@@ -1,0 +1,49 @@
+<%- include('./header.ejs') %> 
+   
+<div class="container mt-5">
+    <%   for(let a of product){%>
+        <h4><%= a.name %></h4>
+    <div id="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="card-img-top mx-auto my-2 pt-3 d-block" id="img" src="/<%=a.name%> (1).jpeg" alt="" srcset="">
+                </div>
+                
+        <% for(let b = 2; b<5 ; b++) {%> 
+            <div class="carousel-item">
+            <img id="img" class="card-img-top mx-auto my-2 pt-3 d-block" src="/<%=a.name%> (<%=b%>).jpeg" alt="" srcset="">
+             </div>
+            <% } %> 
+                
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </a>
+            </div>
+    </div>
+
+        <h6>Rating :- <%= a.rating %> </h6>
+        <h5>Price :- <%= a.price %> </h5>
+        <p>Discription :- <%= a.description %></p> 
+        <form action="/cart" method="post">
+            <label for="quantity"> quantity </label>
+            <input type="number" name = "quantity" id="quantity" value="1">
+            <input type="hidden" name = "items" value="<%= a.name %>">
+            <input type="hidden" name = "price" value="<%= a.price %>">
+            <button type="submit" class="btn btn-light">Add item to Cart</button>
+        </form>
+        <% }%>
+
+</div>
+<%- include('./footer.ejs') %> 

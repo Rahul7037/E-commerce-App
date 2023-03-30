@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homePage</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/app.css">
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark" >
+        <a class="navbar-brand" href="/">
+            <img src="/kisspng-shopping-cart-computer-icons-online-shopping-clip-online-shop-5ac112062611b2.5539377615226025021559.png" width="30" height="30" class="d-inline-block align-top mx-3" alt="">
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a id="login" class="nav-link" href="http://localhost:3000/login">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a id="signup" class="nav-link" href="http://localhost:3000/signup">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a id="user" class="nav-link" href="http://localhost:3000/user">User</a>
+            </li>
+            <li class="nav-item">
+                <a id="cart" class="nav-link" href="http://localhost:3000/cart">cart</a>
+              </li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+              </a>
+              
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="http://localhost:3000/electronics">Electronics</a>
+                <a class="dropdown-item" href="http://localhost:3000/furniture">Furniture</a>
+                <a class="dropdown-item" href="http://localhost:3000/homeEssentials">Home Essential</a>
+                <a class="dropdown-item" href="http://localhost:3000/babyCare">Baby Care</a>
+            </li>
+          </ul>
+          <div class="mx-auto">
+          <form  action="http://localhost:3000/search" method="post">
+            <ul class="navbar-nav ">
+             <li class="nav-item ">
+                 <input class="form-control mr-sm-2 " type="search" name="search" placeholder="Search" aria-label="Search">
+             </li>
+             <li class="nav-item">
+                 <button class="btn btn-outline-success my-2 mx-2 my-sm-0" type="submit">Search</button>
+             </li >
+            </ul> 
+           </form>
+        </div>
+        </div>
+      </nav>
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<%- include('./header.ejs') %> 
+    <div class="container mt-5">
+        <% var arr = [] %> 
+        <% for(let list of product){%>
+            <% arr.push(list.name)%>
+            <% }%>
+            <div class="row">
+       <%   for(let name of arr.sort()){%>
+            <div class="col">
+                <div id="div" class="card text-justify mb-4 mx-auto " style="width: 18rem;">
+            <img class="card-img-top mx-auto my-2 d-block" id="img" src="<%=name%> (1).jpeg" alt="" srcset="">
+        <a id="text" class=" text-dark" href="http://localhost:3000/productPage/<%=name%>"><h5 id="text" class="card-title px-4 " ><%=name %> </h5></a>
+                    </div>
+             </div>
+        <%  }%>
+        </div>
+    </div>
+    <%- include('./footer.ejs') %> 

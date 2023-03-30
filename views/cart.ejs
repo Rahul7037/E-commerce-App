@@ -1,0 +1,33 @@
+<%- include('./header.ejs') %> 
+
+<div class="container mt-5 text-white bg-secondary p-3 rounded">
+    <% var total = 0 %> 
+    <h4>Your itmes</h4>
+    
+   <%    for( let a of product){%>
+    <div class="mt-2">
+        <h3>Product :- <%= a.items %> </h3>
+        <h6>Quantity :- <%= a.quantity %> </h6>
+        <h6>Price :- <%= a.price %> </h6>
+        <h6>Subtotal : - <%=a.quantity * a.price %> </h6>
+        <% total = total + (a.quantity * a.price) %> 
+        <form action="http://localhost:3000/delete/<%= a.id %>?_method=DELETE" method="post">
+            <button class="btn btn-light" type="submit">Remove item</button>
+        </form>
+    </div>
+        <% }%>
+    <div class="mt-2"> <h3>Total amount :- <%= total %> </h3></div>
+   
+   <form action="/payment" method="post">
+    <% var x = 0 %> 
+    <% for( let a of product){%>
+        <input type="hidden" name = "item" value="<%= a.items %> ">
+        <input type="hidden" name = "price" value="<%= a.price %> ">
+        <% x++ %> 
+    <% }%>
+    <input type="hidden" name = "x" value="<%=x%> ">
+    <input type="hidden" name = "amount" value="<%= total %> ">
+    <button class="btn btn-light" type="submit">Proceed to payment</button>
+   </form>
+</div>
+   <%- include('./footer.ejs') %> 
