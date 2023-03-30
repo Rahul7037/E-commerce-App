@@ -24,7 +24,5 @@ Features
 - user account page with necessary user infromations
 - payment page :- for payments i used razorpay payment getaway api and for payment verification i used crypto sha256 algorithm
 
-Demo
 
-https://youtu.be/u06J8oZs11M
 
